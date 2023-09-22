@@ -1,10 +1,10 @@
+using System;
 using UnityEngine;
 
-public class MeleeAttack : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
     public GameObject Attacker;
     public Vector2 Direction;
-    public float DieTimer;
-    public float StartTime;
+    public float Speed;
     public float Damage;
 }

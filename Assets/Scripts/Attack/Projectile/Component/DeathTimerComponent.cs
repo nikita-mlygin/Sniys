@@ -1,19 +1,17 @@
 using UnityEngine;
 
-public class MeleeAttackComponent : IProjectileComponent
+public class DeathTimerComponent : IProjectileComponent
 {
     public bool Next(ref GameObject projectile)
     {
-        if (projectile.TryGetComponent<MeleeAttack>(out var component))
+        if (projectile.TryGetComponent<DeathTimer>(out var deathTimer))
         {
-            if (component.StartTime + component.DieTimer < Time.time)
+            if (deathTimer.DeathTime < Time.time)
             {
                 Object.Destroy(projectile);
 
                 return false;
             }
-
-            return true;
         }
 
         return true;
