@@ -6,13 +6,6 @@ public class MeleeAttackComponent : IProjectileComponent
     {
         if (projectile.TryGetComponent<MeleeAttack>(out var component))
         {
-            if (component.StartTime + component.DieTimer < Time.time)
-            {
-                Object.Destroy(projectile);
-
-                return false;
-            }
-
             return true;
         }
 
