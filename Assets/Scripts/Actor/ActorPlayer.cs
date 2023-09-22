@@ -5,26 +5,19 @@ using UnityEngine.Assertions.Must;
 
 public class ActorPlayer : MonoBehaviour
 {
-    private Rigidbody2D rb;
-
-    [SerializeField]
-    private float speed;
-
-    private Vector2 direction = Vector2.zero;
+    private MoveController moveController;
 
     private void Start()
     {
-       rb = GetComponent<Rigidbody2D>();
+        moveController = GetComponent<MoveController>();
     }
 
-    void Update()
+    private void Update()
     {
-        direction.x = Input.GetAxisRaw("Horizontal");
-        direction.y = Input.GetAxisRaw("Vertical");
-    }
-
-    private void FixedUpdate()
-    {
-        rb.MovePosition((Vector2)transform.position + direction.normalized * speed * Time.fixedDeltaTime);
+        moveController.SetDirection(new Vector2()
+        {
+            x = Input.GetAxisRaw("Horizontal"),
+            y = Input.GetAxisRaw("Vertical"),
+        });
     }
 }
