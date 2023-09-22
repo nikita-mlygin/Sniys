@@ -13,15 +13,15 @@ public static class WeaponFabric
         weaponDictionary.Add(name, weaponCreationData);
     }
 
-    public static void AddWeapon<T>(string name, T weaponData, Func<GameObject, GameObject, ProjectileManager, T, IWeapon> creationFunction)
+    public static void AddWeapon<T>(string name, T weaponData, Func<GameObject, ProjectileManager, T, IWeapon> creationFunction)
         where T : ScriptableObject
     {
         weaponDictionary.Add(name, new WeaponCreationData()
         {
             Data = weaponData,
-            WeaponCreator = (GameObject owner, GameObject view, ProjectileManager projectileManager, object data) =>
+            WeaponCreator = (GameObject owner, ProjectileManager projectileManager, object data) =>
             {
-                return creationFunction(owner, view, projectileManager, (T)data);
+                return creationFunction(owner, projectileManager, (T)data);
             }
         });
     }
@@ -30,7 +30,7 @@ public static class WeaponFabric
     {
         if (weaponDictionary.TryGetValue(name, out var creationData))
         {
-            weapon = creationData.WeaponCreator(owner, weaponDisplay, projectileManager, creationData.Data);
+            weapon = creationData.WeaponCreator(owner, projectileManager, creationData.Data);
 
             return true;
         }

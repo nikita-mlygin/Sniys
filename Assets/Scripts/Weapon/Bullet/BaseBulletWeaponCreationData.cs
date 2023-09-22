@@ -4,6 +4,9 @@ using UnityEngine;
 public class BaseBulletCreationData : ScriptableObject
 {
     [SerializeField]
+    public GameObject WeaponViewPrefab;
+
+    [SerializeField]
     public GameObject BulletPrefab;
 
     [SerializeField]

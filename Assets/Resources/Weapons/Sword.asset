@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Sword
   m_EditorClassIdentifier: 
   AttackPrefab: {fileID: 6835338319547078943, guid: 46bacfd104b9ece4c99ec119995b530e, type: 3}
+  WeaponViewPrefab: {fileID: 3969055424573068039, guid: fd0c9f146a8d09045b307d682e97f5c7, type: 3}
   Damage: 20
   AttackPerSecond: 5
+  AnimationName: Attack
