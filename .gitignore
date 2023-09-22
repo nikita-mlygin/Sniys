@@ -73,5 +73,3 @@ crashlytics-build.properties
 
 # My tests
 /Assets/Scripts/Test
-/Assets/Prefabs/Attack/Melee/TestAttack.prefab
-/Assets/Prefabs/Attack/Melee/TestAttack.prefab.meta
