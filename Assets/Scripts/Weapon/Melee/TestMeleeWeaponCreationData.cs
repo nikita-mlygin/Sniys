@@ -1,6 +1,14 @@
 using UnityEngine;
 
-public struct TestMeleeWeaponCreationData
+[CreateAssetMenu(fileName = "MeleeWeapon", menuName = "MeleeWeapon")]
+public class TestMeleeWeaponCreationData : ScriptableObject
 {
-    public GameObject WeaponPrefab;
+    [SerializeField]
+    public GameObject AttackPrefab;
+
+    [SerializeField]
+    public int Damage;
+
+    [SerializeField]
+    public int AttackPerSecond;
 }

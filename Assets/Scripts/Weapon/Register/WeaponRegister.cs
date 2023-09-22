@@ -4,28 +4,16 @@ public static class WeaponRegister
 {
     public static void Register()
     {
-        WeaponFabric.AddWeapon("Sword", new WeaponCreationData()
+        var swordData = Resources.Load("Weapons/Sword");
+
+        WeaponFabric.AddWeapon("Sword", swordData as TestMeleeWeaponCreationData, (owner, view, projectileManager, data) =>
         {
-            Data = new TestMeleeWeaponCreationData()
-            {
-                WeaponPrefab = Resources.Load("Prefabs/Attack/Melee/TestAttack", typeof(GameObject)) as GameObject
-            },
-            WeaponCreator = (GameObject owner, GameObject viewWeapon, ProjectileManager projectileManager, object data) =>
-            {
-                return new TestMeleeWeapon(viewWeapon, owner, projectileManager, ((TestMeleeWeaponCreationData)data).WeaponPrefab);
-            }
+            return new TestMeleeWeapon(view, owner, projectileManager, data);
         });
 
-        WeaponFabric.AddWeapon("Pistol", new WeaponCreationData()
+        WeaponFabric.AddWeapon("Pistol", Resources.Load("Weapons/Pistol") as BaseBulletCreationData, (owner, view, projectileManager, data) =>
         {
-            Data = new BaseBulletCreationData()
-            {
-                BulletPrefab = Resources.Load("Prefabs/Attack/Bullet/TestBullet", typeof(GameObject)) as GameObject
-            },
-            WeaponCreator = (GameObject owner, GameObject viewWeapon, ProjectileManager projectileManager, object data) =>
-            {
-                return new BaseBulletWeapon(viewWeapon, owner, projectileManager, ((BaseBulletCreationData)data).BulletPrefab);
-            }
+            return new BaseBulletWeapon(view, owner, projectileManager, data);
         });
     }
 }

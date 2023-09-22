@@ -7,6 +7,8 @@ public class Attacker : MonoBehaviour
 
     public void Attack(IWeapon weapon, Vector2 direction)
     {
-        projectileManager.AddProjectile(weapon.Attack(direction));
+        var attack = weapon.Attack(direction);
+
+        projectileManager.AddProjectile(attack);
     }
 }
