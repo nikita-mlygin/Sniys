@@ -7,8 +7,14 @@ public class TestMeleeWeaponCreationData : ScriptableObject
     public GameObject AttackPrefab;
 
     [SerializeField]
+    public GameObject ViewPrefab;
+
+    [SerializeField]
     public int Damage;
 
     [SerializeField]
     public int AttackPerSecond;
+
+    [SerializeField]
+    public string AnimationName = "Attack";
 }
