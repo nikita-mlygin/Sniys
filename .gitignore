@@ -70,3 +70,8 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# My tests
+/Assets/Scripts/Test
+/Assets/Prefabs/Attack/Melee/TestAttack.prefab
+/Assets/Prefabs/Attack/Melee/TestAttack.prefab.meta
