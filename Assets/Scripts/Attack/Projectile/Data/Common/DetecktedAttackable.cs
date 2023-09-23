@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DetectedAttackable : MonoBehaviour
+public class DetectedAttackableList : MonoBehaviour
 {
-    public List<Attackable> AttackableObjectList;
+    public List<Attackable> AttackableObjectList = new();
 }

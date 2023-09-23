@@ -5,4 +5,5 @@ public enum ProjectileComponentEnum
     DeathTimer,
     DetectAttack,
     BulletDetect,
+    BulletAttack,
 }

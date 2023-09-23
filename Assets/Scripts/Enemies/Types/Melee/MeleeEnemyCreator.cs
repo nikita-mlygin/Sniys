@@ -19,6 +19,8 @@ public class MeleeEnemyCreator : BaseEnemyCreator<MeleeEnemyData>
         var move = enemyInstance.AddComponent<MoveController>();
         var rb = enemyInstance.AddComponent<Rigidbody2D>();
         var target = enemyInstance.AddComponent<EnemyTarget>();
+        var gettingAttacks = enemyInstance.AddComponent<EnemyGettingAttacks>();
+        var attackable = enemyInstance.AddComponent<AttackableEnemy>();
 
         move.InitializeMaxSpeed(data.MaxSpeed);
 

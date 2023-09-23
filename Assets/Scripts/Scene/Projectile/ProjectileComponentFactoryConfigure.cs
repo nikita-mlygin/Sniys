@@ -9,5 +9,6 @@ public class ProjectileComponentFactoryConfigure : MonoBehaviour
         ProjectileComponentFactory.AddCreator(ProjectileComponentEnum.DeathTimer, () => new DeathTimerComponent());
         ProjectileComponentFactory.AddCreator(ProjectileComponentEnum.DetectAttack, () => new DetectAttackComponent());
         ProjectileComponentFactory.AddCreator(ProjectileComponentEnum.BulletDetect, () => new BulletDetectComponent());
+        ProjectileComponentFactory.AddCreator(ProjectileComponentEnum.BulletAttack, () => new BulletAttackComponent());
     }
 }
