@@ -8,7 +8,10 @@ public class MeleeDeathTimerComponent : IProjectileComponent
         {
             if (projectile.TryGetComponent<MeleeAttack>(out var attack))
             {
-                attack.Weapon.transform.rotation = Quaternion.Euler(0, 0, 0);
+                if (deathTimer.DeathTime < Time.time)
+                {
+                    attack.Weapon.transform.rotation = Quaternion.Euler(0, 0, 0);
+                }
             }
         }
 
