@@ -24,6 +24,9 @@ public class BulletProjectileCreator : BaseProjectileCreator<BulletProjectileDat
 
         var deathTimer = instance.AddComponent<DeathTimer>();
         var bullet = instance.AddComponent<Bullet>();
+        instance.AddComponent<DetectedObjectsList>();
+        instance.AddComponent<DetectedAttackable>();
+        instance.AddComponent<ProjectileCollisionDetector>();
 
         deathTimer.DeathTime = Time.time + data.DeathTimeOffset;
 

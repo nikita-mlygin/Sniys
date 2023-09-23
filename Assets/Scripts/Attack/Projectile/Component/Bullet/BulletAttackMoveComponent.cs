@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BulletAttackComponent : IProjectileComponent
+public class BulletAttackMoveComponent : IProjectileComponent
 {
     public bool Next(ref GameObject projectile)
     {
