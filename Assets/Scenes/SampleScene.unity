@@ -230,7 +230,7 @@ Transform:
   m_GameObject: {fileID: 222936142}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.84, y: -0.15, z: 0}
+  m_LocalPosition: {x: 0.772, y: -0.374, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -266,7 +266,7 @@ MonoBehaviour:
   Target: {fileID: 1511347633}
   Offset: {x: 0, y: 0, z: 0}
   Velocity: 10
-  MinDistance: 0
+  MinDistance: 1
 --- !u!1 &269586809
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,7 +489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {fileID: 1511347633}
   Offset: {x: 0, y: 0, z: -10}
-  Velocity: 1
+  Velocity: 5
   MinDistance: 0
 --- !u!1 &619394800
 GameObject:
@@ -31795,8 +31795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bbe7b66e8b037c42b0472c436d27658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vfxRenderer: {fileID: 222936144}
-  speed: 5
+  speed: 3
 --- !u!1 &1667994325
 GameObject:
   m_ObjectHideFlags: 0
