@@ -1,4 +1,4 @@
-public enum ComponentEnum
+public enum EnemiesComponentEnum
 {
     EnemyWithTargetInAttackDistanceMove,
     IsAttackComponent,

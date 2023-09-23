@@ -13,7 +13,7 @@ public static class WeaponRegister
             return new TestMeleeWeapon(view, owner, projectileManager, data);
         });
 
-        WeaponFabric.AddWeapon("Pistol", Resources.Load("Weapons/Pistol") as BaseBulletCreationData, (owner, projectileManager, data) =>
+        WeaponFabric.AddWeapon("Pistol", Resources.Load("Weapons/Pistol") as BaseBulletWeaponCreationData, (owner, projectileManager, data) =>
         {
             var view = GameObject.Instantiate(data.WeaponViewPrefab, owner.transform);
 

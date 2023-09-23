@@ -9,11 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dbd688450673534d8ffa03d84110d78, type: 3}
-  m_Name: Alien1
+  m_Script: {fileID: 11500000, guid: 7d6593e1ad3ed4e47a8d9e17a9ab1aaa, type: 3}
+  m_Name: Bullet1
   m_EditorClassIdentifier: 
-  EnemyPrefab: {fileID: 8602916890389674409, guid: 3c5f135d8049e9d49bdbd25c2fd43fd5, type: 3}
-  PrimaryWeapon: Sword
-  MaxSpeed: 3
-  AttackDistance: 3
-  Components: 020000000100000000000000
+  Prefab: {fileID: 1137829378186450677, guid: 0595621f890f7f84cb9f6b0cb0e1404c, type: 3}
+  DeathTimeOffset: 2
+  Damage: 10
+  Speed: 5
+  Size: 1
+  AttackPerSecond: 1
+  Components: 0200000000000000

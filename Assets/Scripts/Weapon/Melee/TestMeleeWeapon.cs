@@ -17,7 +17,7 @@ public class TestMeleeWeapon : IWeapon
 
     public TestMeleeWeaponCreationData creationData;
 
-    public GameObject Attack(Vector2 direction)
+    public IProjectile Attack(Vector2 direction)
     {
         var projectile = Object.Instantiate(creationData.AttackPrefab, Owner.transform);
 
@@ -43,6 +43,6 @@ public class TestMeleeWeapon : IWeapon
 
         WeaponGameObject.transform.rotation = Quaternion.Euler(0f, 0f, angleDegrees);
 
-        return projectile;
+        return new BaseProjectile(projectile, new System.Collections.Generic.List<IProjectileComponent>() { });
     }
 }

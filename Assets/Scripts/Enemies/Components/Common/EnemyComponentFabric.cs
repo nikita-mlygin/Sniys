@@ -4,15 +4,15 @@ using System.Collections.Generic;
 
 public static class EnemyComponentFabric
 {
-    private static IDictionary<ComponentEnum, Func<IEnemyComponent>> componentCreationDictionary = new Dictionary<ComponentEnum, Func<IEnemyComponent>>();
-    private static IDictionary<ComponentEnum, IEnemyComponent> componentsInst = new Dictionary<ComponentEnum, IEnemyComponent>();
+    private static IDictionary<EnemiesComponentEnum, Func<IEnemyComponent>> componentCreationDictionary = new Dictionary<EnemiesComponentEnum, Func<IEnemyComponent>>();
+    private static IDictionary<EnemiesComponentEnum, IEnemyComponent> componentsInst = new Dictionary<EnemiesComponentEnum, IEnemyComponent>();
 
-    public static void AddComponentCreation(ComponentEnum type, Func<IEnemyComponent> componentCreator)
+    public static void AddComponentCreation(EnemiesComponentEnum type, Func<IEnemyComponent> componentCreator)
     {
         componentCreationDictionary.Add(type, componentCreator);
     }
 
-    public static bool TryGet(ComponentEnum type, out IEnemyComponent component)
+    public static bool TryGet(EnemiesComponentEnum type, out IEnemyComponent component)
     {
         if (componentsInst.TryGetValue(type, out component))
         {

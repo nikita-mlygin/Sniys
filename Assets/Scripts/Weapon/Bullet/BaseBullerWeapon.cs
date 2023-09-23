@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BaseBulletWeapon : IWeapon
 {
-    public BaseBulletWeapon(GameObject weaponGameObject, GameObject owner, ProjectileManager projectileManager, BaseBulletCreationData data)
+    public BaseBulletWeapon(GameObject weaponGameObject, GameObject owner, ProjectileManager projectileManager, BaseBulletWeaponCreationData data)
     {
         WeaponGameObject = weaponGameObject;
         Owner = owner;
@@ -15,27 +15,15 @@ public class BaseBulletWeapon : IWeapon
     public GameObject Owner { get; set; }
     public ProjectileManager ProjectileManager { get; set; }
 
-    private readonly BaseBulletCreationData data;
+    private readonly BaseBulletWeaponCreationData data;
 
-    public GameObject Attack(Vector2 direction)
+    public IProjectile Attack(Vector2 direction)
     {
-        var projectile = Object.Instantiate(data.BulletPrefab, Owner.transform);
+        if (ProjectileFactory.TryGet(ProjectileEnum.Bullet, this, direction, out var projectile))
+        {
+            return projectile;
+        }
 
-        float angleRadians = Mathf.Atan2(direction.y, direction.x);
-        float angleDegrees = angleRadians * Mathf.Rad2Deg;
-
-        projectile.transform.rotation = Quaternion.Euler(0f, 0f, angleDegrees);
-        projectile.transform.localScale *= data.Size;
-
-        var deathTimer = projectile.GetComponent<DeathTimer>();
-        var bullet = projectile.GetComponent<Bullet>();
-
-        deathTimer.DeathTime = Time.time + data.lifeTime;
-        
-        bullet.Direction = direction;
-        bullet.Speed = data.Speed;
-        bullet.Damage = data.Damage;
-
-        return projectile;
+        throw new System.Exception("Projectile not found");
     }
 }

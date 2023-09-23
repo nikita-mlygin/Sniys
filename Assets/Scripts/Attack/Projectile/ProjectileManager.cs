@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class ProjectileManager : MonoBehaviour
 {
-    private readonly IList<GameObject> projectiles = new List<GameObject>();
-    private readonly IList<IProjectileComponent> projectileComponents = new List<IProjectileComponent>();
+    private readonly IList<IProjectile> projectiles = new List<IProjectile>();
 
-    public void AddProjectileComponent(IProjectileComponent component)
-    {
-        projectileComponents.Add(component);
-    }
-
-    public void AddProjectile(GameObject projectile)
+    public void AddProjectile(IProjectile projectile)
     {
         projectiles.Add(projectile);
     }
@@ -21,11 +15,12 @@ public class ProjectileManager : MonoBehaviour
     {
         for (int i = 0; i < projectiles.Count; i++)
         {
-            for (int j = 0; j < projectileComponents.Count; j++)
-            {
-                var projectile = projectiles[i];
+            var projectile = projectiles[i];
+            var instance = projectiles[i].Instance;
 
-                if (!projectileComponents[j].Next(ref projectile))
+            for (int j = 0; j < projectile.Components.Count; j++)
+            {
+                if (!projectile.Components[j].Next(ref instance))
                 {
                     projectiles.Remove(projectile);
                     break;

@@ -6,5 +6,5 @@ public interface IWeapon
     public GameObject Owner { get; set; }
     public ProjectileManager ProjectileManager { get; set; }
 
-    public GameObject Attack(Vector2 direction);
+    public IProjectile Attack(Vector2 direction);
 }

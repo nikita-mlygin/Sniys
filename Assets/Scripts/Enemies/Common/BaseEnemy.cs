@@ -35,6 +35,6 @@ public class BaseEnemy : IEnemy
 
     public void RemoveComponent(IEnemyComponent component)
     {
-        throw new System.NotImplementedException();
+        componentList.Remove(component);
     }
 }
