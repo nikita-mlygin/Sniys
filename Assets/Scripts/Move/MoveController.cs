@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class MoveController : MonoBehaviour
 {
     private Rigidbody2D rb;
+
+    public VisualEffect vfxRenderer;
 
     [SerializeField]
     private float speed;
@@ -24,5 +27,7 @@ public class MoveController : MonoBehaviour
     private void FixedUpdate()
     {
         rb.MovePosition((Vector2)transform.position + direction.normalized * speed * Time.fixedDeltaTime);
+
+        vfxRenderer.SetVector3("ColliderPos", transform.position);
     }
 }
