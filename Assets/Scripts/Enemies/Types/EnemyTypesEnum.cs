@@ -1,0 +1,4 @@
+public enum EnemyEnum
+{
+    Melee,
+}
