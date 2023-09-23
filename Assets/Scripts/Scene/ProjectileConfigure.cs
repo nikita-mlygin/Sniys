@@ -6,6 +6,7 @@ public class ProjectileConfigure : MonoBehaviour
     {
         var projectileManager = this.GetComponent<ProjectileManager>();
 
+        projectileManager.AddProjectileComponent(new MeleeDeathTimerComponent());
         projectileManager.AddProjectileComponent(new DeathTimerComponent());
         projectileManager.AddProjectileComponent(new BulletAttackComponent());
         projectileManager.AddProjectileComponent(new MeleeAttackComponent());

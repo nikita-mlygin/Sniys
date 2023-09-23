@@ -7,7 +7,7 @@ public class TestMeleeWeaponCreationData : ScriptableObject
     public GameObject AttackPrefab;
 
     [SerializeField]
-    public GameObject ViewPrefab;
+    public GameObject WeaponViewPrefab;
 
     [SerializeField]
     public int Damage;
