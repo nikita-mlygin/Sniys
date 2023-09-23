@@ -1,5 +1,6 @@
 public enum ComponentEnum
 {
-    MoveComponent,
+    EnemyWithTargetInAttackDistanceMove,
     IsAttackComponent,
+    FindTarget,
 }

@@ -1,20 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class EnemyManager : MonoBehaviour
 {
     private IList<IEnemy> enemies = new List<IEnemy>();
-    private IList<IEnemyComponent> components = new List<IEnemyComponent>();
 
     public void AddEnemy(IEnemy enemy)
     {
         enemies.Add(enemy);
-    }
-
-    public void AddComponent(IEnemyComponent component)
-    {
-        components.Add(component);
     }
 
     private void FixedUpdate()
@@ -23,6 +18,7 @@ public class EnemyManager : MonoBehaviour
         {
             var enemy = enemies[i];
             var goEnemy = enemy.EnemyInstance;
+            var components = enemy.ComponentList;
 
             for (int j = 0; j < components.Count; j++)
             {

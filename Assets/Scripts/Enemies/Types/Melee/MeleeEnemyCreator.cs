@@ -17,12 +17,16 @@ public class MeleeEnemyCreator : BaseEnemyCreator<MeleeEnemyData>
         enemyInstance.transform.position = position;
 
         var move = enemyInstance.AddComponent<MoveController>();
-        move.InitializeMaxSpeed(data.MaxSpeed);
-
         var rb = enemyInstance.AddComponent<Rigidbody2D>();
+        var target = enemyInstance.AddComponent<EnemyTarget>();
+
+        move.InitializeMaxSpeed(data.MaxSpeed);
 
         rb.gravityScale = 0;
         rb.freezeRotation = true;
+
+        target.target = null;
+        target.attackDistance = data.AttackDistance;
 
         return new MeleeEnemy(enemyInstance, data.Components.Select(x =>
         {
