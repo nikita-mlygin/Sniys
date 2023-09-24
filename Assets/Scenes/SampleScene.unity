@@ -181,7 +181,7 @@ VFXRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1961106349
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 100
 --- !u!2083052967 &222936144
 VisualEffect:
@@ -382,6 +382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02b364536d0874043b9be637cdfb2099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectileManager: {fileID: 269586810}
 --- !u!114 &269586817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -726,7 +727,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1284904769
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.234375, y: 2.5, z: 0}
@@ -31877,7 +31878,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bbe7b66e8b037c42b0472c436d27658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  maxSpeed: 5
+--- !u!114 &1511347635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511347628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dd0400828411974c9d1ce3814119a64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Actor
 --- !u!1 &1667994325
 GameObject:
   m_ObjectHideFlags: 0
@@ -31977,20 +31991,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  maxSpeed: 5
---- !u!114 &1511347635
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1511347628}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7dd0400828411974c9d1ce3814119a64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Actor
 --- !u!1 &2081343018
 GameObject:
   m_ObjectHideFlags: 0
@@ -32062,7 +32062,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1200308471
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 520c9a31e49a4b14ca0b202fde84e064, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

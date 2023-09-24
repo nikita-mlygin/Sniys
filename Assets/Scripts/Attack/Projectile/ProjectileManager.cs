@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ProjectileManager : MonoBehaviour
@@ -21,6 +22,12 @@ public class ProjectileManager : MonoBehaviour
 
             for (int j = 0; j < projectile.Components.Count; j++)
             {
+                if (projectile == null || projectile.Instance == null || projectile.Instance.IsDestroyed())
+                {
+                    projectiles.Remove(projectile);
+                    break;
+                }
+
                 if (!projectile.Components[j].Next(ref instance))
                 {
                     projectiles.Remove(projectile);
