@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class MoveController : MonoBehaviour
 {
@@ -41,5 +42,6 @@ public class MoveController : MonoBehaviour
     private void FixedUpdate()
     {
         rb.MovePosition((Vector2)transform.position + direction.normalized * speed * Time.fixedDeltaTime);
+
     }
 }

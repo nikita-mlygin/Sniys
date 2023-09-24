@@ -44,3 +44,18 @@ TagManager:
   - name: Ship
     uniqueID: 3682659943
     locked: 0
+  - name: Forest
+    uniqueID: 3010062527
+    locked: 0
+  - name: Player
+    uniqueID: 1200308471
+    locked: 0
+  - name: Fog
+    uniqueID: 1961106349
+    locked: 0
+  - name: Cosmos
+    uniqueID: 198252515
+    locked: 0
+  - name: Planet and SpaceShip
+    uniqueID: 46470391
+    locked: 0
