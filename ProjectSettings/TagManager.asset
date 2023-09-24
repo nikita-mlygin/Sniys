@@ -41,6 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ship
+    uniqueID: 3682659943
+    locked: 0
   - name: Forest
     uniqueID: 3010062527
     locked: 0
