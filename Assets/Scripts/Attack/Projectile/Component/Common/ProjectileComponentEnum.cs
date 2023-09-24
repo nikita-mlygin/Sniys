@@ -6,4 +6,5 @@ public enum ProjectileComponentEnum
     DetectAttack,
     BulletDetect,
     BulletAttack,
+    Reload,
 }

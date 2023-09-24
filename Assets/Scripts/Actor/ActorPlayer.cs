@@ -18,12 +18,12 @@ public class ActorPlayer : MonoBehaviour
         weaponInventory = GetComponent<WeaponInventory>();
         attacker  = GetComponent<Attacker>();
 
-        if (WeaponFabric.TryCreateWeapon("Sword", gameObject, gameObject, projectileManager, out var primary))
+        if (WeaponFabric.TryCreateWeapon("Sword", gameObject, projectileManager, out var primary))
         {
             weaponInventory.PrimaryWeapon = primary;
         }
 
-        if (WeaponFabric.TryCreateWeapon("Pistol", gameObject, gameObject, projectileManager, out var secondary))
+        if (WeaponFabric.TryCreateWeapon("Pistol", gameObject, projectileManager, out var secondary))
         {
             weaponInventory.SecondaryWeapon = secondary;
         }

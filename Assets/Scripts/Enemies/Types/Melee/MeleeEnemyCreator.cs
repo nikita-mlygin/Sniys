@@ -3,12 +3,16 @@ using UnityEngine;
 
 public class MeleeEnemyCreator : BaseEnemyCreator<MeleeEnemyData>
 {
-    public MeleeEnemyCreator(MeleeEnemyData data) : base(data)
+    private readonly ProjectileManager projectileManager;
+
+    public MeleeEnemyCreator(MeleeEnemyData data, ProjectileManager projectileManager) : base(data)
     {
+        this.projectileManager = projectileManager;
     }
 
-    public MeleeEnemyCreator(string path) : base(path)
+    public MeleeEnemyCreator(string path, ProjectileManager projectileManager) : base(path)
     {
+        this.projectileManager = projectileManager;
     }
 
     public override IEnemy CreateEnemy(Vector3 position)
@@ -21,6 +25,17 @@ public class MeleeEnemyCreator : BaseEnemyCreator<MeleeEnemyData>
         var target = enemyInstance.AddComponent<EnemyTarget>();
         var gettingAttacks = enemyInstance.AddComponent<EnemyGettingAttacks>();
         var attackable = enemyInstance.AddComponent<AttackableEnemy>();
+        var weaponInventory = enemyInstance.AddComponent<WeaponInventory>();
+        var attacker = enemyInstance.AddComponent<Attacker>();
+        var team = enemyInstance.AddComponent<Team>();
+        team.Name = "Enemies";
+
+        attacker.projectileManager = this.projectileManager;
+
+        if (WeaponFabric.TryCreateWeapon(data.PrimaryWeapon, enemyInstance, projectileManager, out var weapon))
+        {
+            weaponInventory.PrimaryWeapon = weapon;
+        }
 
         move.InitializeMaxSpeed(data.MaxSpeed);
 

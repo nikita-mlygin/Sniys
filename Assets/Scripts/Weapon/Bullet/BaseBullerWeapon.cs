@@ -9,6 +9,8 @@ public class BaseBulletWeapon : IWeapon
         Owner = owner;
         ProjectileManager = projectileManager;
         this.data = data;
+        var reload = weaponGameObject.AddComponent<WeaponReload>();
+        reload.ReloadTime = 1f / data.AttackPerSecond;
     }
 
     public GameObject WeaponGameObject { get; set; }
@@ -19,8 +21,15 @@ public class BaseBulletWeapon : IWeapon
 
     public IProjectile Attack(Vector2 direction)
     {
+        if (this.WeaponGameObject.GetComponent<WeaponReload>().ReloadTime > Time.time)
+        {
+            return null;
+        }
+
         if (ProjectileFactory.TryGet(ProjectileEnum.Bullet, this, direction, out var projectile))
         {
+            this.WeaponGameObject.GetComponent<WeaponReload>().ReloadTime = Time.time + 1f / data.AttackPerSecond;
+
             return projectile;
         }
 

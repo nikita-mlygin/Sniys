@@ -10,5 +10,6 @@ public class ProjectileComponentFactoryConfigure : MonoBehaviour
         ProjectileComponentFactory.AddCreator(ProjectileComponentEnum.DetectAttack, () => new DetectAttackComponent());
         ProjectileComponentFactory.AddCreator(ProjectileComponentEnum.BulletDetect, () => new BulletDetectComponent());
         ProjectileComponentFactory.AddCreator(ProjectileComponentEnum.BulletAttack, () => new BulletAttackComponent());
+        ProjectileComponentFactory.AddCreator(ProjectileComponentEnum.Reload, () => new ReloadWeaponComponent());
     }
 }

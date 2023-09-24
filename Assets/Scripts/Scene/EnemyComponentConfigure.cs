@@ -7,5 +7,6 @@ public class EnemyComponentConfigure : MonoBehaviour
         EnemyComponentFabric.AddComponentCreation(EnemiesComponentEnum.EnemyWithTargetInAttackDistanceMove, () => new EnemyWithTargetInAttackDistanceMoveComponent());
         EnemyComponentFabric.AddComponentCreation(EnemiesComponentEnum.IsAttackComponent, () => new EnemyGetIsAttackComponent());
         EnemyComponentFabric.AddComponentCreation(EnemiesComponentEnum.FindTarget, () => new FindTargetComponent());
+        EnemyComponentFabric.AddComponentCreation(EnemiesComponentEnum.GettingHitHandler, () => new GettingHitHandlerComponent());
     }
 }

@@ -24,6 +24,8 @@ public class BulletProjectileCreator : BaseProjectileCreator<BulletProjectileDat
 
         var deathTimer = instance.AddComponent<DeathTimer>();
         var bullet = instance.AddComponent<Bullet>();
+        var team = instance.AddComponent<Team>();
+        team.Name = weapon.Owner.GetComponent<Team>().Name;
         instance.AddComponent<DetectedObjectsList>();
         instance.AddComponent<DetectedAttackableList>();
         instance.AddComponent<ProjectileCollisionDetector>();
@@ -33,6 +35,8 @@ public class BulletProjectileCreator : BaseProjectileCreator<BulletProjectileDat
         bullet.Direction = direction;
         bullet.Speed = data.Speed;
         bullet.Damage = data.Damage;
+        bullet.Attacker = weapon.Owner;
+        bullet.AttackerWeapon = weapon;
 
         return new BaseProjectile(instance, data.Components.Select(x =>
         {

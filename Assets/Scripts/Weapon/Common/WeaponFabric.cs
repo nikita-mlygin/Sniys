@@ -26,7 +26,7 @@ public static class WeaponFabric
         });
     }
 
-    public static bool TryCreateWeapon(string name, GameObject owner, GameObject weaponDisplay, ProjectileManager projectileManager, out IWeapon weapon)
+    public static bool TryCreateWeapon(string name, GameObject owner, ProjectileManager projectileManager, out IWeapon weapon)
     {
         if (weaponDictionary.TryGetValue(name, out var creationData))
         {

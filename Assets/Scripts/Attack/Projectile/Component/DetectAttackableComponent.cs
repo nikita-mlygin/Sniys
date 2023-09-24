@@ -26,6 +26,11 @@ public class DetectAttackComponent : IProjectileComponent
 
                 if (detectedObjectsList.DetectedObjects[i].gameObject.TryGetComponent<Attackable>(out var attackable))
                 {
+                    if (attackable.gameObject.GetComponent<Team>().Name == projectile.GetComponent<Team>().Name)
+                    {
+                        continue;
+                    }
+
                     detectedAttackableList.AttackableObjectList.Add(attackable);
                 }
             }

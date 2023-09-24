@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Alien1
   m_EditorClassIdentifier: 
   EnemyPrefab: {fileID: 8602916890389674409, guid: 3c5f135d8049e9d49bdbd25c2fd43fd5, type: 3}
-  PrimaryWeapon: Sword
+  PrimaryWeapon: Pistol
   MaxSpeed: 3
   AttackDistance: 3
-  Components: 020000000100000000000000
+  Components: 02000000010000000000000003000000

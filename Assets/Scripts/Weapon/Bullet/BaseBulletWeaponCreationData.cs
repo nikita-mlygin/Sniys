@@ -5,4 +5,7 @@ public class BaseBulletWeaponCreationData : ScriptableObject
 {
     [SerializeField]
     public GameObject WeaponViewPrefab;
+
+    [SerializeField]
+    public float AttackPerSecond;
 }
